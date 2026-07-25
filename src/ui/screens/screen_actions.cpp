@@ -215,7 +215,9 @@ void ScreenActions::createActionButton(lv_obj_t* parent, const char* label,
             Serial.println(F("[ScreenActions] Navigate to Fan screen"));
         } else if (strcmp(btnName, "Temperature") == 0) {
             Serial.println(F("[ScreenActions] Navigate to Temperature screen"));
-            // TODO: g_uiManager->navigateTo(SCREEN_TEMPERATURE);
+            if (g_uiManager) {
+                g_uiManager->navigateTo(SCREEN_TEMPERATURE);
+            }
         } else if (strcmp(btnName, "Macros") == 0) {
             Serial.println(F("[ScreenActions] Navigate to Macros screen"));
         } else if (strcmp(btnName, "Disable\nMotors") == 0) {

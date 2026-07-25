@@ -287,7 +287,9 @@ void ScreenHomeV2::onButtonClick(lv_event_t* e) {
         // TODO: Navigate to homing screen
     } else if (strcmp(btnName, "Temperature") == 0) {
         Serial.println(F("[ScreenHomeV2] Navigate to Temperature screen"));
-        // TODO: Navigate to temperature screen
+        if (g_uiManager) {
+            g_uiManager->navigateTo(SCREEN_TEMPERATURE);
+        }
     } else if (strcmp(btnName, "Actions") == 0) {
         Serial.println(F("[ScreenHomeV2] Navigate to Actions screen"));
         if (g_uiManager) {

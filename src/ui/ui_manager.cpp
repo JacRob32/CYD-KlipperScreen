@@ -1,5 +1,8 @@
 #include "ui/ui_manager.h"
 #include "screens/screen_home_v2.h"
+#include "screens/screen_actions.h"
+#include "screens/screen_extrude.h"
+#include "screens/screen_temperature.h"
 #include <Arduino.h>
 
 UIManager::UIManager() 
@@ -116,17 +119,17 @@ ScreenBase* UIManager::createScreen(ScreenID screenID) {
         case SCREEN_HOME:
             return new ScreenHomeV2();
         
+        case SCREEN_ACTIONS:
+            return new ScreenActions();
+        
         case SCREEN_EXTRUDE:
-            // TODO: return new ScreenExtrude();
-            Serial.println(F("[UIManager] WARNING: ScreenExtrude not yet implemented"));
-            return nullptr;
+            return new ScreenExtrude();
+        
+        case SCREEN_TEMPERATURE:
+            return new ScreenTemperature();
         
         case SCREEN_MOVE:
             Serial.println(F("[UIManager] WARNING: ScreenMove not yet implemented"));
-            return nullptr;
-        
-        case SCREEN_TEMPERATURE:
-            Serial.println(F("[UIManager] WARNING: ScreenTemperature not yet implemented"));
             return nullptr;
         
         case SCREEN_SETTINGS:
