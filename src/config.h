@@ -40,6 +40,7 @@
 // Screen IDs
 enum ScreenID {
     SCREEN_HOME = 0,
+    SCREEN_ACTIONS,
     SCREEN_EXTRUDE,
     SCREEN_MOVE,
     SCREEN_TEMPERATURE,
