@@ -1,5 +1,5 @@
 #include "ui/ui_manager.h"
-#include "screens/screen_home.h"
+#include "screens/screen_home_v2.h"
 #include <Arduino.h>
 
 UIManager::UIManager() 
@@ -114,7 +114,7 @@ ScreenID UIManager::getCurrentScreen() const {
 ScreenBase* UIManager::createScreen(ScreenID screenID) {
     switch (screenID) {
         case SCREEN_HOME:
-            return new ScreenHome();
+            return new ScreenHomeV2();
         
         case SCREEN_EXTRUDE:
             // TODO: return new ScreenExtrude();
