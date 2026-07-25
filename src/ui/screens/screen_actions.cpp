@@ -208,7 +208,9 @@ void ScreenActions::createActionButton(lv_obj_t* parent, const char* label,
             // TODO: g_uiManager->navigateTo(SCREEN_MOVE);
         } else if (strcmp(btnName, "Extrude") == 0) {
             Serial.println(F("[ScreenActions] Navigate to Extrude screen"));
-            // TODO: g_uiManager->navigateTo(SCREEN_EXTRUDE);
+            if (g_uiManager) {
+                g_uiManager->navigateTo(SCREEN_EXTRUDE);
+            }
         } else if (strcmp(btnName, "Fan") == 0) {
             Serial.println(F("[ScreenActions] Navigate to Fan screen"));
         } else if (strcmp(btnName, "Temperature") == 0) {
