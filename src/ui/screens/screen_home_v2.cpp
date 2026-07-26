@@ -1,4 +1,4 @@
-#include "ui/screens/screen_home_v2.h"
+#include "screen_home_v2.h"
 #include "ui/ui_manager.h"
 #include <Arduino.h>
 

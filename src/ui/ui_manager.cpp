@@ -3,6 +3,7 @@
 #include "screens/screen_actions.h"
 #include "screens/screen_extrude.h"
 #include "screens/screen_temperature.h"
+#include "screens/screen_print_status.h"
 #include <Arduino.h>
 
 UIManager::UIManager() 
@@ -127,6 +128,9 @@ ScreenBase* UIManager::createScreen(ScreenID screenID) {
         
         case SCREEN_TEMPERATURE:
             return new ScreenTemperature();
+        
+        case SCREEN_PRINT_STATUS:
+            return new ScreenPrintStatus();
         
         case SCREEN_MOVE:
             Serial.println(F("[UIManager] WARNING: ScreenMove not yet implemented"));
